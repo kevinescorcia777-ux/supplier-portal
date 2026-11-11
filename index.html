@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplier Registration Portal</title>
+
+<style>
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f6f9;
+    margin:0;
+}
+
+.header{
+    background:#003366;
+    color:white;
+    padding:20px 40px;
+}
+
+.header h1{
+    margin:0;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    margin-bottom:20px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.card h2{
+    color:#003366;
+    margin-top:0;
+}
+
+.row{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.field{
+    flex:1;
+    min-width:250px;
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:600;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.upload{
+    border:2px dashed #b5b5b5;
+    padding:20px;
+    text-align:center;
+    border-radius:8px;
+}
+
+button{
+    background:#0078d4;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#005ea6;
+}
+
+.success{
+    display:none;
+    margin-top:20px;
+    padding:15px;
+    background:#dff6dd;
+    border:1px solid #73aa5d;
+    color:#107c10;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Supplier Registration Portal</h1>
+    <p>Lean Solutions Group</p>
+</div>
+
+<div class="container">
+
+<form id="supplierForm">
+
+<div class="card">
+<h2>Información General</h2>
+
+<div class="row">
+
+<div class="field">
+<label>Razón Social *</label>
+<input type="text" required>
+</div>
+
+<div class="field">
+<label>Nombre Comercial</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>NIT / Tax ID *</label>
+<input type="text" required>
+</div>
+
+<div class="field">
+<label>País *</label>
+<select required>
+<option value="">Seleccionar</option>
+<option>Colombia</option>
+<option>Estados Unidos</option>
+<option>México</option>
+<option>Ecuador</option>
+<option>Guatemala</option>
+<option>Filipinas</option>
+</select>
+</div>
+
+<div class="field">
+<label>Ciudad</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Dirección</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Sitio Web</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Tipo de Empresa</label>
+<select>
+<option>Servicios</option>
+<option>Manufactura</option>
+<option>Distribuidor</option>
+<option>Consultoría</option>
+<option>Tecnología</option>
+</select>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Contacto Principal</h2>
+
+<div class="row">
+
+<div class="field">
+<label>Nombre Completo *</label>
+<input type="text" required>
+</div>
+
+<div class="field">
+<label>Cargo *</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Email *</label>
+<input type="email" required>
+</div>
+
+<div class="field">
+<label>Teléfono *</label>
+<input type="text" required>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Información Bancaria</h2>
+
+<div class="row">
+
+<div class="field">
+<label>Banco</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Tipo de Cuenta</label>
+<select>
+<option>Ahorros</option>
+<option>Corriente</option>
+</select>
+</div>
+
+<div class="field">
+<label>Número de Cuenta</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Moneda</label>
+<select>
+<option>USD</option>
+<option>COP</option>
+<option>MXN</option>
+<option>EUR</option>
+</select>
+</div>
+
+<div class="field">
+<label>SWIFT / ABA / IBAN</label>
+<input type="text">
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Documentos Requeridos</h2>
+
+<p>Adjunte los documentos correspondientes.</p>
+
+<div class="field">
+<label>Certificado Cámara de Comercio</label>
+<input type="file">
+</div>
+
+<div class="field">
+<label>RUT / Tax Certificate</label>
+<input type="file">
+</div>
+
+<div class="field">
+<label>Certificación Bancaria</label>
+<input type="file">
+</div>
+
+<div class="field">
+<label>Estados Financieros</label>
+<input type="file">
+</div>
+
+</div>
+
+<div class="card">
+<h2>Declaraciones</h2>
+
+<p>
+<input type="checkbox" required>
+ Certifico que la información suministrada es verídica.
+</p>
+
+<p>
+<input type="checkbox" required>
+ Autorizo el tratamiento de datos personales.
+</p>
+
+<p>
+<input type="checkbox" required>
+ Declaro que mi empresa no se encuentra en listas restrictivas.
+</p>
+
+<p>
+<input type="checkbox" required>
+ Acepto el proceso de validación documental de Lean Solutions Group.
+</p>
+
+</div>
+
+<div style="text-align:center;">
+<button type="submit">
+Enviar Solicitud
+</button>
+</div>
+
+<div id="successMessage" class="success">
+✅ Registro enviado correctamente. Su solicitud será revisada por el equipo de Procurement.
+</div>
+
+</form>
+
+</div>
+
+<script>
+document.getElementById("supplierForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+document.getElementById("successMessage")
+.style.display="block";
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+});
+</script>
+
+</body>
+</html>
